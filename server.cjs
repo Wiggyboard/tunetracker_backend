@@ -7,12 +7,12 @@ const https = require('https');
 const fs = require('fs');
 
 // SSL certificate
-const privateKey = fs.readFileSync('/etc/ssl/private/private.key', 'utf8');
-const fullchain = fs.readFileSync('/etc/ssl/certs/fullchain.crt', 'utf8');
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/api.wiggyboard.com/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/api.wiggyboard.com/fullchain.pem', 'utf8');
 
 const credentials = {
   key: privateKey,
-  cert: fullchain
+  cert: certificate
 };
 
 mongoose.connect(mongodb, {
