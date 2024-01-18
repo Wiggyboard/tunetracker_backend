@@ -13,9 +13,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.options('/users/login', cors());
-app.options('/users/signup', cors());
-
 // Routes
 app.use('/users', userRouter);
 
