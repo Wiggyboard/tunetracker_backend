@@ -6,7 +6,7 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(`${__dirname}/tunetracker`));
+/* app.use(express.static(`${__dirname}/tunetracker`)); */
 
 app.use((req, res, next) => {
   console.log('Hello from the middleware');
